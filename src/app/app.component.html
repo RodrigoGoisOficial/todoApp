@@ -8,14 +8,15 @@
   </li>
 </ul>
 
-<form>
+<form [formGroup]="form">
   <fieldset>
     <label>Tarefas: </label>
     <input type="text"
     placeholder="Título da Tarefa"
     minlength="3"
     maxlength="60"
-    formControlName="title">
+    formControlName="title"><br>
+    <small *ngIf="form.invalid && !form.pristine">Este campo deve conter entre 3 e 60 caracteres</small>
     <button>Salvar</button>
   </fieldset>
 </form>
